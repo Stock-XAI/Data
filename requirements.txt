@@ -1,0 +1,6 @@
+FinanceDataReader
+yfinance
+pandas
+pymongo
+tqdm
+python-dotenv
