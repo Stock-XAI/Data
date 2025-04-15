@@ -7,14 +7,14 @@ A Python-based pipeline to collect stock data from KOSPI and NASDAQ markets and 
 ## 📁 Project Structure
 ```
 project-directory/
-├── KOSPI to Mongo.py                     # Collects KOSPI top 50 data and uploads to MongoDB
-├── NASDAQ to Mongo.py                   # Collects NASDAQ top 50 data using hard-coded tickers
+├── KOSPI to Mongo.py                   # Collects KOSPI top 50 data and uploads to MongoDB
+├── NASDAQ to Mongo.py                  # Collects NASDAQ top 50 data using hard-coded tickers
 ├── NASDAQ to Mongo use Ticker.py       # Collects NASDAQ data using tickers stored in MongoDB
 ├── kospi_daily_jsonl_5_days.py         # Converts KOSPI MongoDB data into FinMA training format
 ├── kospi_daily_output_5_days.jsonl     # Generated KOSPI training data
 ├── nasdaq_daily_5_days.py              # Converts NASDAQ MongoDB data into FinMA training format
 ├── nasdaq_daily_jsonl_5_days.jsonl     # Generated NASDAQ training data
-├── .env                                 # MongoDB password (excluded from GitHub)
+├── .env                                # MongoDB password (excluded from GitHub)
 ├── .gitignore
 ├── requirements.txt
 └── README.md
