@@ -5,7 +5,7 @@ A Python-based pipeline to collect stock data from KOSPI and NASDAQ markets and 
 ---
 
 ## 📁 Project Structure
-
+```
 project-directory/
 ├── KOSPI to Mongo.py                     # Collects KOSPI top 50 data and uploads to MongoDB
 ├── NASDAQ to Mongo.py                   # Collects NASDAQ top 50 data using hard-coded tickers
@@ -18,7 +18,7 @@ project-directory/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
-
+```
 ---
 
 ## ⚙️ Features
