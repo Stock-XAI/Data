@@ -1,5 +1,3 @@
-
-```markdown
 # 📊 KOSPI & NASDAQ Stock Data Collector & Formatter
 
 A Python-based pipeline to collect KOSPI and NASDAQ stock data, upload it to MongoDB Atlas, and convert it into FinMA-compatible training datasets in both regression and classification formats.
