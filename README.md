@@ -1,6 +1,3 @@
-수정된 파일 구조와 실제 파일명을 반영하여 `README.md`를 아래와 같이 업데이트해드렸습니다:
-
----
 
 ```markdown
 # 📊 KOSPI & NASDAQ Stock Data Collector & Formatter
@@ -10,7 +7,6 @@ A Python-based pipeline to collect KOSPI and NASDAQ stock data, upload it to Mon
 ---
 
 ## 📁 Project Structure
-```
 
 project-directory/
 ├── multiclass/
