@@ -1,91 +1,125 @@
-# 📊 KOSPI & NASDAQ Stock Data Collector
+수정된 파일 구조와 실제 파일명을 반영하여 `README.md`를 아래와 같이 업데이트해드렸습니다:
 
-A Python-based pipeline to collect stock data from KOSPI and NASDAQ markets and upload it to MongoDB Atlas, as well as convert it to FinMA-compatible training data format.
+---
+
+```markdown
+# 📊 KOSPI & NASDAQ Stock Data Collector & Formatter
+
+A Python-based pipeline to collect KOSPI and NASDAQ stock data, upload it to MongoDB Atlas, and convert it into FinMA-compatible training datasets in both regression and classification formats.
 
 ---
 
 ## 📁 Project Structure
 ```
+
 project-directory/
-├── KOSPI to Mongo.py                   # Collects KOSPI top 50 data and uploads to MongoDB
-├── NASDAQ to Mongo.py                  # Collects NASDAQ top 50 data using hard-coded tickers
-├── NASDAQ to Mongo use Ticker.py       # Collects NASDAQ data using tickers stored in MongoDB
-├── kospi_daily_jsonl_5_days.py         # Converts KOSPI MongoDB data into FinMA training format
-├── kospi_daily_output_5_days.jsonl     # Generated KOSPI training data
-├── nasdaq_daily_5_days.py              # Converts NASDAQ MongoDB data into FinMA training format
-├── nasdaq_daily_jsonl_5_days.jsonl     # Generated NASDAQ training data
-├── .env                                # MongoDB password (excluded from GitHub)
+├── multiclass/
+│ └── \[Multiclass dataset generation notebooks]
+├── regression/
+│ └── \[Regression dataset generation notebooks]
+├── (No DB) kospi_daily_jsonl.ipynb
+├── (No DB) kospi_weekly_jsonl.ipynb
+├── (No DB) kospi_monthly_jsonl.ipynb
+├── (No DB) nasdaq_jsonl_parser.ipynb
+├── (No DB) regression_kospi_daily_jsonl.ipynb
+├── (No DB) regression_kospi_jsonl.ipynb
+├── (No DB) regression_nasdaq_jsonl_parser.ipynb
+├── KOSPI to Mongo.py
+├── NASDAQ to Mongo.py
+├── NASDAQ to Mongo use Ticker.py
+├── kospi_daily_jsonl_5_days.py
+├── kospi_daily_jsonl_10_days(with overlap).py
+├── kospi_monthly_jsonl_10_months.py
+├── kospi_weekly_jsonl_10_weeks.py
+├── 0528_FastSHAP.ipynb
+├── generate_masked_prompts.ipynb
 ├── .gitignore
 ├── requirements.txt
 └── README.md
-```
+
+````
+
 ---
 
 ## ⚙️ Features
 
-- ✅ Fetch and upload KOSPI top 50 stock data to MongoDB Atlas  
-- ✅ Fetch and upload NASDAQ stock data (using either MongoDB-stored tickers or hard-coded tickers)  
-- ✅ Transform stock data stored in MongoDB into FinMA-compatible training dataset (.jsonl format)  
-- ✅ Secure MongoDB credential handling using dotenv and .env  
-- ✅ Supports both data ingestion and preprocessing for training
+- ✅ Collect KOSPI & NASDAQ stock data (Top 50)
+- ✅ Upload structured data to MongoDB Atlas
+- ✅ Generate training data in `.jsonl` format for:
+  - Multi-class classification
+  - Regression prediction (e.g., % change)
+- ✅ Support various time frames (daily, weekly, monthly)
+- ✅ Implement SHAP-based feature importance analysis
 
 ---
 
-## 📦 How the Code Works
+## 🛠️ Main Scripts Overview
 
-### KOSPI to Mongo.py
-- Uses FinanceDataReader to fetch KOSPI top 50 stocks
-- Uploads structured data to MongoDB Atlas
+### 🗃 MongoDB Ingestion
+- `KOSPI to Mongo.py`: Fetch and upload KOSPI top 50 stock data
+- `NASDAQ to Mongo.py`: Fetch NASDAQ data using hardcoded tickers
+- `NASDAQ to Mongo use Ticker.py`: Fetch NASDAQ data using tickers from MongoDB
 
-### NASDAQ to Mongo use Ticker.py
-- Reads NASDAQ tickers stored in MongoDB
-- Uses yfinance to fetch corresponding stock data
-- Uploads to MongoDB
+### 📄 Dataset Generation
+- `(No DB) *.ipynb`: Generate `.jsonl` data directly from raw FinanceDataReader or yfinance output (no MongoDB dependency)
+- `kospi_daily_jsonl_5_days.py`: Create 5-day window JSONL files
+- `kospi_daily_jsonl_10_days(with overlap).py`: Create overlapping 10-day JSONL dataset
+- `kospi_monthly_jsonl_10_months.py`: Monthly overlapping dataset
+- `kospi_weekly_jsonl_10_weeks.py`: Weekly overlapping dataset
 
-### NASDAQ to Mongo.py
-- Uses hard-coded top 50 NASDAQ tickers
-- Fetches data using yfinance and uploads to MongoDB
-
-### kospi_daily_jsonl_5_days.py
-- Fetches KOSPI data from MongoDB
-- Converts the last 5 days of data into FinMA .jsonl format
-
-### nasdaq_daily_5_days.py
-- Same as above, but for NASDAQ
+### 🧠 Feature Explanation & Prompting
+- `0528_FastSHAP.ipynb`: FastSHAP implementation for regression feature importance
+- `generate_masked_prompts.ipynb`: Prompt generation for language model training
 
 ---
 
 ## 🔧 Setup
 
-1. Clone the repository
+1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/stock-data-uploader.git
-cd stock-data-uploader
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+````
 
-2. Create a .env file and add your MongoDB password:
+2. Set up environment variables:
 
+Create a `.env` file with:
+
+```env
 MONGO_PASSWORD=your_mongodb_password
+```
 
 3. Install dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
 ---
 
-📚 Requirements
+## 📚 Requirements
 
-The following libraries are required and included in requirements.txt:
+All dependencies are listed in `requirements.txt`. Major packages:
 
-FinanceDataReader
-yfinance
-pandas
-pymongo
-tqdm
-python-dotenv
-(자동으로 생성하려면 pip freeze > requirements.txt 명령어를 사용할 수도 있어요.)
+- `FinanceDataReader`
+- `yfinance`
+- `pandas`
+- `pymongo`
+- `tqdm`
+- `python-dotenv`
+
+(You can auto-generate the list using `pip freeze > requirements.txt`.)
 
 ---
 
-💬 Contact
-TBD
+## 💬 Contact
+
+For questions or contributions, please contact: **\[Your Name or GitHub handle here]**
+
+```
+
+---
+
+필요 시, 프로젝트 목적 및 기능 설명도 추가 가능합니다. GitHub에 업로드하시려면 이 내용을 `README.md` 파일로 덮어쓰기 하시면 됩니다. 수정이나 보완이 필요하면 말씀해주세요!
+```
