@@ -3,7 +3,7 @@
 A Python-based pipeline to collect KOSPI and NASDAQ stock data, upload it to MongoDB Atlas, and convert it into FinMA-compatible training datasets in both regression and classification formats.
 
 ---
-
+````
 ## 📁 Project Structure
 
 project-directory/
@@ -74,7 +74,7 @@ project-directory/
 ```bash
 git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
-````
+```
 
 2. Set up environment variables:
 
@@ -110,10 +110,3 @@ All dependencies are listed in `requirements.txt`. Major packages:
 ## 💬 Contact
 
 For questions or contributions, please contact: **\[Your Name or GitHub handle here]**
-
-```
-
----
-
-필요 시, 프로젝트 목적 및 기능 설명도 추가 가능합니다. GitHub에 업로드하시려면 이 내용을 `README.md` 파일로 덮어쓰기 하시면 됩니다. 수정이나 보완이 필요하면 말씀해주세요!
-```
